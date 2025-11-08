@@ -9,17 +9,17 @@ import { getFirestore,
          where,
          getDocs,
          addDoc
-      } from "firebase/firestore";
+      } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
 const firebaseConfig = {
-apiKey: "AIzaSyBd8j2j4yjQF1HDbMyJMUnB8g-2Bp0ELZU",
-authDomain: "pagina-ely.firebaseapp.com",
-projectId: "pagina-ely",
-storageBucket: "pagina-ely.firebasestorage.app",
-messagingSenderId: "787334096832",
-appId: "1:787334096832:web:eb4934fdcb564f44160a25",
-measurementId: "G-DXTSCT11Q6"
-      };
+  apiKey: "AIzaSyBd8j2j4yjQF1HDbMyJMUnB8g-2Bp0ELZU",
+  authDomain: "pagina-ely.firebaseapp.com",
+  projectId: "pagina-ely",
+  storageBucket: "pagina-ely.firebasestorage.app",
+  messagingSenderId: "787334096832",
+  appId: "1:787334096832:web:eb4934fdcb564f44160a25",
+  measurementId: "G-DXTSCT11Q6"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -27,38 +27,21 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 //Referencia al formulario
 const botonEnviar = document.querySelector('#enviar');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const messageInput = document.querySelector('#message');
+
 
 //Funciones Firebase
-botonEnviar.addEventListener('click', async(e) =>{
-  e.preventDefault();
-  
-const name = document.querySelector('#name');
-const email = document.querySelector('#email');
-const message = document.querySelector('#message');
-
-if (!name || !email || !message) {
-  alert('Por favor, completa todos los campos.');
-  return;
-}
-try{
-  await addDoc(collection(db, 'contactos'), {
-    nombre:name,
-    correo:email,
-    mensaje:message,
-    fecha:new Date()
+botonEnviar.addEventListener('click', async function () {
+  await setDoc(doc(db, "posibleCliente", emailInput.value), {
+    name: nameInput.value,
+    message: messageInput.value,
+    email: emailInput.value
   });
 
-console.log("Mensaje enviado correctamente:");
-console.log({
-  nombre:name,
-  correo:email,
-  mensaje:message,
-});
-alert("Tu mensaje se envió correctamente.");
-botonEnviar.reset();
-}catch(error){
-  console.error("Error al enviar el mensaje:", error);
-alert("Error al enviar el mensaje. Por favor, inténtalo nuevamente.");
-}
-
+  if (!nameInput.value || !emailInput.value || !messageInput.value) {
+    alert('Por favor, completa todos los campos.');
+    return;
+  }
 });
