@@ -11,28 +11,37 @@ import { getFirestore,
          addDoc
       } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBd8j2j4yjQF1HDbMyJMUnB8g-2Bp0ELZU",
-  authDomain: "pagina-ely.firebaseapp.com",
-  projectId: "pagina-ely",
-  storageBucket: "pagina-ely.firebasestorage.app",
-  messagingSenderId: "787334096832",
-  appId: "1:787334096832:web:eb4934fdcb564f44160a25",
-  measurementId: "G-DXTSCT11Q6"
-};
+import { firebaseConfig } from "./database.js";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
-//Referencia al formulario
-const botonEnviar = document.querySelector('#enviar');
+
+
+//Referencia al formulario de contacto
+const botonEnviar = document.querySelector('#enviar')
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const messageInput = document.querySelector('#message');
 
 
-//Funciones Firebase
+//Referencia al formulario de catalogo
+const idArt= document.querySelector('#idArt');
+const nombreArt= document.querySelector('#nombreArt');
+const casaArt= document.querySelector('#casaArt');
+const generoArt= document.querySelector('#generoArt');
+const precioArt= document.querySelector('#precioArt');
+const aromaArt= document.querySelector('#aromaArt');
+const btnGuardar= document.querySelector('#btnGuardar');
+
+
+//Referencia al dialog registro
+const btnRegistrar= document.querySelector('#btnRegistrar');
+const btnCerrar= document.querySelector('#btnCerrar');
+const dialogRegistro= document.querySelector('#dialogRegistro');
+
+
 botonEnviar.addEventListener('click', async function () {
   await setDoc(doc(db, "posibleCliente", emailInput.value), {
     name: nameInput.value,

@@ -8,30 +8,52 @@
     <link rel="shortcut icon" href="./images/ely-emblem.png" type="image/x-icon">
 </head>
 <body>
+    <dialog id="dialogRegistro" open>
 <div class="formulario-catalogo-container">
             <div id="catalogo-form">
-                <div class="form-group">
-                    <label for="nombrePerfume">Nombre de perfume</label>
-                    <input type="text" id="nombrePerfume">
+                 <div class="form-group">
+                    <label for="idArtReg">Id Articulo</label>
+                    <input type="text" id="idArtReg" placeholder="D0001/C0001">
+                </div>
+                   <div class="form-group">
+                    <label for="categoriaArtReg">Categoría</label>
+                    <input type="text" id="categoriaArtReg" placeholder="DAMA/CABALLERO/AMBIENTAL/ARABES/NICHO">
                 </div>
                 <div class="form-group">
-                    <label for="casaAroma">Casa de Aroma</label>
-                    <input type="text" id="casaAroma">
+                    <label for="nombreArtReg">Nombre de perfume</label>
+                    <input type="text" id="nombreArtReg"placeholder="CHANCE EAU TENDRE">
                 </div>
                 <div class="form-group">
-                    <label for="genero">Género</label>
-                    <input type="text" id="genero">
+                    <label for="casaArtReg">Casa de Aroma</label>
+                    <input type="text" id="casaArtReg" placeholder="CHANEL">
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Precio</label>
-                    <input type="text" id="precio">
+                    <label for="generoArtReg">Género</label>
+                    <input type="text" id="generoArtReg" placeholder="FEMENINO/MASCULINO/UNISEX">
+                </div>
+                <div class="form-group">
+                    <label for="precioArtReg">Precio</label>
+                    <input type="text" id="precioArtReg" placeholder="200.00">
                 </div>
                  <div class="form-group">
-                    <label for="tipoAroma">Tipo de aroma</label>
-                    <input type="text" id="tipoAroma">
+                    <label for="aromaArtReg">Tipo de aroma</label>
+                    <input type="text" id="aromaArtReg" placeholder="Ejemplo: FRESCO Y NATURAL">
                 </div>
-                <button id="enviar" class="btn btn-dark">Enviar</button>
+                 <div class="form-group">
+                    <label for="descripcionArtReg">Descripción</label>
+                    <input type="text" id="descripcionArtReg" placeholder="Sus notas principales son membrillo y toronja (pomelo) en la salida, jazmín y rosa en el corazón, y almizcle blanco en el fondo. Se trata de una fragancia floral frutal que busca evocar felicidad, elegancia y ligereza. ">
+                </div>
+
+
+                <button id="btnGuardarReg" class="btn btn-dark">guardar</button>
+                <button id="btnCerrarReg" class="btn btn-secondary">cerrar</button>
             </div>
         </div>
+        </dialog>
+        <button id="btnRegistrarReg" class="btn btn-secondary">Registrar</button>
+        <button id="btnBuscarReg" class="btn btn-secondary">Buscar</button>
+
+        
+    <script type="module" src="./registro.js"></script> 
 </body>
 </html>

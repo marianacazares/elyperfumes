@@ -463,6 +463,7 @@ header nav a {
 .pos-2 { top: 180px; right: -25px; }
 .pos-3 { bottom: 210px; left: 30px; }
 .pos-4 { bottom: 40px; right: 1px; }
+.pos-5 { bottom: -120px; left: 1px;}
 
 /* --- ABOUT US PAGE --- */
 .about-us-section {
@@ -712,6 +713,43 @@ experience-box {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
 }
+
+/* --- ARTICULOS --- */
+.catalog-dama-section, .catalog-caballero-section, .catalog-nicho-section, .catalog-arabes-section, .catalog-ambientales-section {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    gap: 2rem;
+    padding: 2rem 0 2rem 0;
+}
+#dama,#caballero, #nicho, #arabes, #ambientales {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.articulo {
+    margin-bottom: 3rem;
+    display: grid;
+    padding: 1.5rem 1.5rem;
+    border-radius: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    background-color: rgb(253, 250, 245);
+    border: #410006 2px solid;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.355);
+}
+
+.descripcion {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: var(--text-color-subtle);
+}
+
+
 
 /* --- FOOTER --- */
 footer {
